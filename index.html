@@ -1,91 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Space Suki Studio - Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Suki Studio - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="hero">
+    <div class="theme-toggle">
+        <span>Mode nuit</span>
+        <button id="themeToggle" type="button" aria-label="Activer ou désactiver le mode nuit">ON</button>
+    </div>
+
     <h1>Space Suki Studio</h1>
     <p>Portfolio d'applications, jeux et projets personnels</p>
 </header>
 
-<section>
-    <h2>Comptes officiels</h2>
-    <div class="card">
-        <h3>Google Play Store</h3>
-        <a href="#">Voir le compte développeur</a>
-    </div>
+<main>
 
-    <div class="card">
-        <h3>itch.io</h3>
-        <a href="#">Voir le profil Space Suki Studio</a>
-    </div>
-</section>
+    <section>
+        <h2>Comptes officiels</h2>
 
-<section>
-    <h2>Jeux</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Google Play Store</h3>
+                <p>Compte officiel Space Suki Studio sur Google Play.</p>
+                <a class="btn" href="#">Voir le compte</a>
+            </article>
 
-    <div class="card">
-        <h3>Space Suki</h3>
-        <div class="buttons">
-            <a href="#">Google Play</a>
-            <a href="#">itch.io</a>
-            <a href="#">Télécharger APK</a>
-            <a href="#">iOS (à venir)</a>
+            <article class="card">
+                <h3>itch.io</h3>
+                <p>Profil Space Suki Studio pour les jeux web et prototypes.</p>
+                <a class="btn" href="#">Voir le profil</a>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <h3>Jeu à venir</h3>
-        <div class="buttons">
-            <a href="#">Télécharger APK</a>
-            <a href="#">iOS (à venir)</a>
+    <section>
+        <h2>Jeux</h2>
+
+        <div class="grid">
+            <article class="card">
+                <h3>Space Suki</h3>
+                <p>Jeu mobile disponible sur Google Play Store.</p>
+                <div class="buttons">
+                    <a class="btn" href="#">Google Play Store</a>
+                    <a class="btn secondary" href="#">itch.io</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Jeu à venir</h3>
+                <p>Prototype ou jeu en cours de développement.</p>
+                <div class="buttons">
+                    <div class="apk-wrapper">
+                        <a class="btn disabled" href="#">APK à venir</a>
+                        <button class="help-btn" type="button" aria-label="Aide installation APK">?</button>
+                    </div>
+                </div>
+            </article>
         </div>
-    </div>
-</section>
+    </section>
 
-<section>
-    <h2>Applications Sport / Santé</h2>
+    <section>
+        <h2>Applications Sport / Santé</h2>
 
-    <div class="card">
-        <h3>Taïso Fit Generator</h3>
-        <div class="buttons">
-            <a href="#">Télécharger APK</a>
-            <a href="#">iOS (à venir)</a>
+        <div class="grid">
+            <article class="card">
+                <h3>Taïso Fit Generator</h3>
+                <p>Application de génération de séances de Taïso et circuit training.</p>
+                <div class="buttons">
+                    <div class="apk-wrapper">
+                        <a class="btn disabled" href="#">APK à venir</a>
+                        <button class="help-btn" type="button" aria-label="Aide installation APK">?</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Microbiote Score Tracking</h3>
+                <p>Application de suivi personnel autour du score microbiote.</p>
+                <div class="buttons">
+                    <div class="apk-wrapper">
+                        <a class="btn disabled" href="#">APK à venir</a>
+                        <button class="help-btn" type="button" aria-label="Aide installation APK">?</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Training Planner</h3>
+                <p>Application de planification et suivi d'entraînement.</p>
+                <div class="buttons">
+                    <div class="apk-wrapper">
+                        <a class="btn disabled" href="#">APK à venir</a>
+                        <button class="help-btn" type="button" aria-label="Aide installation APK">?</button>
+                    </div>
+                </div>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <h3>Microbiote Score Tracking</h3>
-        <div class="buttons">
-            <a href="#">Télécharger APK</a>
-            <a href="#">iOS (à venir)</a>
-        </div>
-    </div>
+    <section>
+        <h2>Documents</h2>
+        <article class="card empty">
+            <p>À venir</p>
+        </article>
+    </section>
 
-    <div class="card">
-        <h3>Training Planner</h3>
-        <div class="buttons">
-            <a href="#">Télécharger APK</a>
-            <a href="#">iOS (à venir)</a>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Documents</h2>
-    <div class="card">
-        <p>Section réservée aux PDF, guides, articles et autres documents.</p>
-    </div>
-</section>
+</main>
 
 <footer>
     <p>© Space Suki Studio</p>
 </footer>
 
+<div id="apkModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="apkModalTitle">
+        <button id="closeModal" class="close-modal" type="button" aria-label="Fermer">×</button>
+        <h2 id="apkModalTitle">Installer un fichier APK</h2>
+        <p>
+            Un fichier APK permet d'installer une application Android sans passer par le Google Play Store.
+        </p>
+        <p>
+            Après le téléchargement, ouvre le fichier depuis les téléchargements de ton téléphone.
+            Android pourra te demander d'autoriser l'installation depuis ton navigateur.
+        </p>
+        <p>
+            Cette manipulation concerne uniquement Android. Sur iPhone, l'installation directe d'une application est beaucoup plus limitée.
+        </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
