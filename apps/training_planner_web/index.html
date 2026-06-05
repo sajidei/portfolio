@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Planner</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Training Planner</h1>
+        <p>Planifier, suivre et reporter tes entraînements.</p>
+      </div>
+      <button id="resetDataBtn" class="ghost danger">Réinitialiser</button>
+    </header>
+
+    <nav class="tabs">
+      <button data-view="year" class="active">Année</button>
+      <button data-view="month">Mois</button>
+      <button data-view="week">Semaine</button>
+      <button data-view="day">Jour</button>
+    </nav>
+
+    <section class="controls">
+      <button id="prevBtn">←</button>
+      <h2 id="currentTitle"></h2>
+      <button id="nextBtn">→</button>
+      <button id="todayBtn" class="secondary">Aujourd’hui</button>
+    </section>
+
+    <main id="app"></main>
+  </div>
+
+  <template id="workoutFormTemplate">
+    <form id="workoutForm" class="panel form-panel">
+      <h3>Nouvel entraînement</h3>
+
+      <label>
+        Discipline
+        <select name="sport" required>
+          <option value="swim">Natation</option>
+          <option value="run">Course à pied</option>
+          <option value="bike">Vélo</option>
+          <option value="strength">Muscu</option>
+        </select>
+      </label>
+
+      <label id="distanceTargetField">
+        Distance cible (km)
+        <input name="targetDistance" type="number" min="0" step="0.1" placeholder="Ex : 3.5" />
+      </label>
+
+      <label>
+        Commentaire
+        <textarea name="comment" rows="3" placeholder="Ex : endurance facile, séries, technique..."></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit">Ajouter</button>
+        <button type="button" id="cancelWorkoutBtn" class="secondary">Annuler</button>
+      </div>
+    </form>
+  </template>
+
+  <template id="periodFormTemplate">
+    <form id="periodForm" class="panel form-panel">
+      <h3>Nouvelle période</h3>
+
+      <label>
+        Date de début
+        <input name="startDate" type="date" required />
+      </label>
+
+      <label>
+        Date de fin
+        <input name="endDate" type="date" required />
+      </label>
+
+      <label>
+        Catégorie
+        <select name="category" required>
+          <option value="endurance">Endurance</option>
+          <option value="puissance">Puissance</option>
+          <option value="force">Force</option>
+        </select>
+      </label>
+
+      <div class="actions">
+        <button type="submit">Ajouter</button>
+        <button type="button" id="cancelPeriodBtn" class="secondary">Annuler</button>
+      </div>
+    </form>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

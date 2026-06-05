@@ -1,0 +1,359 @@
+:root {
+  --bg: #f7f7f4;
+  --panel: #ffffff;
+  --text: #1e2930;
+  --muted: #667085;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --swim: #2563eb;
+  --run: #ef4444;
+  --bike: #f59e0b;
+  --strength: #6b7280;
+  --endurance: #dbeafe;
+  --puissance: #ffedd5;
+  --force: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #f8fafc, #f4f1ea);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+button:hover { filter: brightness(0.96); }
+
+button.secondary {
+  background: #e5e7eb;
+  color: var(--text);
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button.danger { color: var(--danger); }
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.topbar p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.tabs button {
+  background: transparent;
+  color: var(--muted);
+}
+
+.tabs button.active {
+  background: var(--text);
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.controls h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: clamp(18px, 3vw, 28px);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.07);
+  padding: 16px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.period-pills, .legend, .stats-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 650;
+  background: #eef2ff;
+}
+
+.pill.endurance { background: var(--endurance); }
+.pill.puissance { background: var(--puissance); }
+.pill.force { background: var(--force); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.stat-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.weekday {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 750;
+  text-align: center;
+  padding: 6px;
+}
+
+.day-cell {
+  min-height: 94px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.day-cell:hover {
+  border-color: #94a3b8;
+}
+
+.day-cell.muted {
+  opacity: 0.35;
+}
+
+.day-number {
+  font-weight: 750;
+  margin-bottom: 8px;
+}
+
+.dot-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.dot.swim { background: var(--swim); }
+.dot.run { background: var(--run); }
+.dot.bike { background: var(--bike); }
+.dot.strength { background: var(--strength); }
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.month-card {
+  min-height: 130px;
+}
+
+.month-card h3 {
+  margin: 0 0 8px;
+}
+
+.period-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.period-item, .workout-item {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+
+.period-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.week-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.week-day {
+  min-height: 180px;
+}
+
+.day-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.workout-list {
+  display: grid;
+  gap: 10px;
+}
+
+.workout-item header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.workout-item p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.status {
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #eef2ff;
+  font-weight: 750;
+}
+
+.status.done { background: #dcfce7; color: #166534; }
+.status.abandoned { background: #fee2e2; color: #991b1b; }
+.status.planned { background: #e0f2fe; color: #075985; }
+
+.form-panel {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.form-panel label {
+  display: grid;
+  gap: 6px;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.form-panel input,
+.form-panel select,
+.form-panel textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 14px;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+@media (max-width: 800px) {
+  .app-shell { padding: 14px; }
+  .topbar { flex-direction: column; }
+  .tabs { grid-template-columns: repeat(2, 1fr); }
+  .controls { flex-wrap: wrap; }
+  .stats-grid, .year-grid, .week-view { grid-template-columns: 1fr; }
+  .calendar-grid { gap: 5px; }
+  .day-cell { min-height: 72px; padding: 6px; }
+}
